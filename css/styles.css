@@ -1,11 +1,13 @@
 :root {
   --primary: #0b2b4c;
   --secondary: #d4a21f;
-  --accent: #1b4b7a;
-  --light: #f5f7fb;
-  --dark: #0a1726;
-  --text: #223047;
-  --border: #e3e7ee;
+  --accent: #2f6fb4;
+  --dark: #07101d;
+  --surface: #0f1e2e;
+  --surface-alt: #13263a;
+  --text: #e8eef7;
+  --muted: #b8c4d6;
+  --border: #20344b;
 }
 
 * {
@@ -17,8 +19,12 @@
 body {
   font-family: "Inter", sans-serif;
   color: var(--text);
-  background: #ffffff;
+  background: var(--dark);
   line-height: 1.6;
+}
+
+p {
+  color: var(--muted);
 }
 
 img {
@@ -29,6 +35,14 @@ img {
 a {
   color: inherit;
   text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid rgba(212, 162, 31, 0.8);
+  outline-offset: 3px;
 }
 
 .container {
@@ -46,38 +60,39 @@ a {
   font-weight: 600;
   border: 2px solid transparent;
   transition: all 0.2s ease;
+  letter-spacing: 0.2px;
 }
 
 .btn-primary {
   background: var(--secondary);
-  color: var(--dark);
+  color: #0b141f;
 }
 
 .btn-primary:hover {
-  background: #be8f19;
+  background: #c7961c;
 }
 
 .btn-secondary {
   background: var(--primary);
-  color: #ffffff;
+  color: var(--text);
 }
 
 .btn-secondary:hover {
-  background: #09223d;
+  background: #0a233e;
 }
 
 .btn-outline {
-  border-color: var(--primary);
-  color: var(--primary);
+  border-color: var(--secondary);
+  color: var(--secondary);
 }
 
 .btn-outline:hover {
-  background: var(--primary);
-  color: #ffffff;
+  background: var(--secondary);
+  color: #0b141f;
 }
 
 .text-link {
-  color: var(--primary);
+  color: var(--secondary);
   font-weight: 600;
 }
 
@@ -85,8 +100,9 @@ a {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: #ffffff;
+  background: rgba(7, 16, 29, 0.9);
   border-bottom: 1px solid var(--border);
+  backdrop-filter: blur(10px);
 }
 
 .header-inner {
@@ -98,7 +114,8 @@ a {
 }
 
 .logo img {
-  height: 56px;
+  height: 72px;
+  background: transparent;
 }
 
 .main-nav {
@@ -121,15 +138,15 @@ a {
 
 .phone-link {
   padding: 0.7rem 1.2rem;
-  background: var(--primary);
-  color: #ffffff;
+  background: var(--secondary);
+  color: #0b141f;
   border-radius: 999px;
   font-weight: 600;
 }
 
 .hero {
-  background: linear-gradient(120deg, rgba(11, 43, 76, 0.95), rgba(11, 43, 76, 0.8));
-  color: #ffffff;
+  background: linear-gradient(120deg, rgba(11, 43, 76, 0.96), rgba(7, 16, 29, 0.92));
+  color: var(--text);
   padding: 5rem 0 4rem;
 }
 
@@ -143,8 +160,8 @@ a {
 .badge {
   display: inline-flex;
   align-items: center;
-  background: rgba(212, 162, 31, 0.2);
-  color: var(--secondary);
+  background: rgba(212, 162, 31, 0.18);
+  color: #f2d17b;
   padding: 0.35rem 0.9rem;
   border-radius: 999px;
   font-size: 0.85rem;
@@ -178,11 +195,12 @@ a {
 }
 
 .hero-card {
-  background: #ffffff;
+  background: var(--surface);
   color: var(--text);
   padding: 2rem;
   border-radius: 24px;
-  box-shadow: 0 20px 50px rgba(10, 23, 38, 0.2);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(3, 7, 12, 0.35);
 }
 
 .hero-card h2 {
@@ -213,11 +231,11 @@ section {
 
 .service-card,
 .testimonial-card {
-  background: #ffffff;
+  background: var(--surface);
   border-radius: 20px;
   padding: 1.8rem;
   border: 1px solid var(--border);
-  box-shadow: 0 12px 24px rgba(10, 23, 38, 0.06);
+  box-shadow: 0 12px 24px rgba(3, 7, 12, 0.25);
 }
 
 .service-card h3 {
@@ -225,7 +243,7 @@ section {
 }
 
 .service-areas {
-  background: var(--light);
+  background: var(--surface-alt);
 }
 
 .split {
@@ -243,7 +261,7 @@ section {
 }
 
 .area-card {
-  background: #ffffff;
+  background: var(--surface);
   padding: 2rem;
   border-radius: 24px;
   border: 1px solid var(--border);
@@ -256,7 +274,7 @@ section {
 }
 
 .trust {
-  background: #ffffff;
+  background: var(--surface-alt);
 }
 
 .trust-grid {
@@ -266,12 +284,12 @@ section {
 }
 
 .testimonials {
-  background: var(--light);
+  background: var(--surface);
 }
 
 .contact-cta {
-  background: var(--primary);
-  color: #ffffff;
+  background: linear-gradient(120deg, rgba(11, 43, 76, 0.96), rgba(19, 38, 58, 0.94));
+  color: var(--text);
 }
 
 .contact-grid {
@@ -296,12 +314,19 @@ section {
 .contact-form textarea {
   padding: 0.8rem 1rem;
   border-radius: 12px;
-  border: none;
+  border: 1px solid var(--border);
+  background: #0b1a29;
+  color: var(--text);
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: rgba(184, 196, 214, 0.8);
 }
 
 .site-footer {
-  background: #061324;
-  color: #ffffff;
+  background: #050d17;
+  color: var(--text);
   padding: 3rem 0 1.5rem;
 }
 
@@ -312,7 +337,7 @@ section {
 }
 
 .footer-logo {
-  height: 48px;
+  height: 60px;
   margin-bottom: 1rem;
 }
 
@@ -326,7 +351,7 @@ section {
   text-align: center;
   margin-top: 2rem;
   font-size: 0.9rem;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(232, 238, 247, 0.7);
 }
 
 @media (max-width: 900px) {
@@ -336,7 +361,8 @@ section {
     border: 1px solid var(--border);
     padding: 0.4rem 0.8rem;
     border-radius: 999px;
-    background: #ffffff;
+    background: var(--surface);
+    color: var(--text);
   }
 
   .nav-list {
@@ -344,10 +370,10 @@ section {
     right: 4%;
     top: 80px;
     flex-direction: column;
-    background: #ffffff;
+    background: var(--surface);
     padding: 1rem;
     border-radius: 16px;
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 24px rgba(3, 7, 12, 0.35);
     display: none;
   }
 
@@ -374,3 +400,147 @@ section {
     border-radius: 8px;
   }
 }
+/* New CSS for Homepage Updates */
+
+/* Hero Form */
+.hero-card form.hero-form {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.hero-form input,
+.hero-form select {
+  width: 100%;
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text);
+  font-family: inherit;
+}
+
+.hero-form input:focus,
+.hero-form select:focus {
+  outline: 2px solid var(--secondary);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hero-form .btn-block {
+  width: 100%;
+  padding: 1rem;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0;
+}
+
+/* Logos Section */
+.logos-section {
+  padding: 3rem 0;
+  background: var(--surface-alt);
+  border-bottom: 1px solid var(--border);
+}
+
+.logos-section.alt-bg {
+  background: var(--dark);
+}
+
+.logos-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.9rem;
+}
+
+.logo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 1.5rem;
+  align-items: center;
+  justify-items: center;
+}
+
+.logo-grid.small-grid {
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+}
+
+/* Brand Logo Placeholders */
+.brand-logo {
+  width: 100%;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.05);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  font-weight: 700;
+  color: var(--muted);
+  font-size: 1.1rem;
+  border: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: var(--secondary);
+  color: var(--text);
+}
+
+/* Recent Projects */
+.recent-projects {
+  background: var(--surface-alt);
+}
+
+.project-card {
+  background: var(--surface);
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image-placeholder {
+  height: 200px;
+  background: #1a2c42;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+.project-details {
+  padding: 1.5rem;
+}
+
+.project-details h4 {
+  margin-bottom: 0.5rem;
+  color: var(--text);
+}
+
+.project-details span {
+  font-size: 0.9rem;
+  color: var(--secondary);
+}
+
+/* List Style Updates */
+.area-list.three-col {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+
