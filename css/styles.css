@@ -543,4 +543,25 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
 }
 
+/* Updated Image Styles */
+.brand-logo-img {
+  max-height: 80px;
+  width: auto;
+  max-width: 100%;
+  transition: transform 0.3s ease;
+  border-radius: 8px;
+}
+
+.brand-logo-img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 15px rgba(212, 162, 31, 0.3);
+}
+
+.project-img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  display: block;
+}
+
 

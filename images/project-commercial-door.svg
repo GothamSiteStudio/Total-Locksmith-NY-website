@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <rect width="400" height="300" fill="#f0f0f0"/>
+  <rect x="100" y="50" width="200" height="250" fill="#add8e6" stroke="#333" stroke-width="5"/>
+  <rect x="120" y="70" width="160" height="210" fill="#e0ffff" opacity="0.5"/>
+  <circle cx="280" cy="180" r="5" fill="#333"/>
+  <rect x="270" y="200" width="25" height="10" fill="#666"/>
+  <text x="200" y="280" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#555">Commercial Door Install</text>
+</svg>
