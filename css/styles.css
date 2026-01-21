@@ -354,22 +354,6 @@ section {
   color: rgba(232, 238, 247, 0.7);
 }
 
-.site-credit {
-  margin-top: 0.5rem;
-  font-size: 0.8rem;
-  color: rgba(232, 238, 247, 0.5);
-}
-
-.site-credit a {
-  color: rgba(232, 238, 247, 0.7);
-  text-decoration: none;
-  transition: color 0.2s ease;
-}
-
-.site-credit a:hover {
-  color: var(--primary);
-}
-
 @media (max-width: 900px) {
   .nav-toggle {
     display: inline-flex;
@@ -588,21 +572,16 @@ section {
 }
 
 .service-icon {
-  width: 80px;
-  height: 80px;
+  width: 56px;
+  height: 56px;
   object-fit: contain;
   margin-bottom: 1rem;
 }
 
-.service-icon-small {
-  width: 56px;
-  height: 56px;
-}
-
 .process-icon,
 .trust-icon {
-  width: 72px;
-  height: 72px;
+  width: 48px;
+  height: 48px;
   object-fit: contain;
   margin-bottom: 0.75rem;
 }
